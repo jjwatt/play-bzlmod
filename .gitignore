@@ -1,0 +1,7 @@
+bazel-play-bzlmod
+.envrc
+bazel-bin
+bazel-out
+bazel-testlogs
+
+*.pyc
