@@ -15,6 +15,7 @@ load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
 # I think there's something in one of the bazel repos about generating them.
 # I know I'd need to make them generated files/proper targets/outputs maybe.
 # But, this works for now.
+# bazel run --enable_bzlmod //:requirements_3_9.update
 compile_pip_requirements_3_9(
     name = "requirements_3_9",
     extra_args = ["--allow-unsafe"],
@@ -53,6 +54,7 @@ py_test(
     srcs = ["test.py"],
     main = "test.py",
     deps = [":lib"],
+    size = "small",
 )
 # This example is also used for integration tests within
 # rules_python.  We are using
